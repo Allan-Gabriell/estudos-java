@@ -92,3 +92,167 @@ Agora vamos melhorar nossa CLASSE, acrescentando nela um MÉTODO para calcular a
 
 - Protected: o membro só pode ser acessado no mesmo pacote, bem como em subclasses de pacotes diferentes;
 - Public: o membro é acessado por todas classes (ao menos que ele resida em um módulo diferente que não exporte o pacote onde ele está);
+## Tipos referência vs tipos valor
+- Classes são tipos referência
+    * Variáveis cujo tipo são classes não devem ser entendidas como caixas, mas sim "tentáculos" (ponteiros) para caixas;
+- Valor "null"
+    * Tipos referência aceitam o valor "null", que indica que a variável aponta para ninguém;
+- Tipos primitivos são tipos valor
+    * Em java, tipos primitivos são tipos valor. Tipos valor são caixas e não ponteiros;
+- Valores padrão
+    * Quando alocamos (new) qualquer tipo estruturado (classe ou array) são atribuídos valores padrão aos seus elementos:
+        * números -> 0;
+        * boolean -> false;
+        * char -> caractere código 0;
+        * objeto -> null;
+## Desalocação de memória - garbage collector e escopo local
+- Garbage collectos
+    * É um processo que automatiza o gerenciamento de memória de um programa em execução;
+    * O garbage collector monitora os objetos alocados dinamicamente pelo programa (no heap), desalocando aqueles que não estão mais sendo utilizados;
+- Escopo local
+
+        void method1(){
+            int x = 10;
+            if(x > 0){
+                int y = 20;
+            }
+            System.ou.println(x);
+        }
+
+        - Quando sairmos do escopo do if a variável y será desalocada e quando sair do method1 todas as variáveis do method1 serão desalocadas;
+## Vetores
+- Em programação, "vetor" é o nome dado a arranjos unidimensionais;
+- Arrano (array) é uma estrutura de dados:
+    * Homogênea (dados do mesmo tipo);
+    * Ordenada (elementos acessados por meio de posições);
+    * Alocada de uma vez spo, em um bloco contíguo de memória;
+- Vantagens:
+    * Acesso imediato aos elementos pela sua posição;
+- Desvantagens:
+    * Tamanho fixo;
+    * Dificuldade para se realizar inserções e deleções;
+## Boxing, Unboxing e Wrapper classes
+- Boxing
+    * É o processo de conversão de um objeto tipo valor para um objeto tipo referência compatível;
+- Uboxing 
+    * É o processo de conversão de um tipo referência para um objeto tipo valor compatível;
+- Wrapper classes
+    * São equivalentes aos tipos primitivos;
+    * Naturalmente aceita o valor null
+    * Para ser feito o boxing e unboxing de forma natural na linguagem;
+    * Uso comum: campos de entidades em sistemas de informação (IMPORTANTE!);
+        * Pois tipos referências (classes) aceitam valor null e usufruem dos recursos OO - orientação a objetos;
+###
+
+        byte --> Byte;
+        short --> Short;
+        int --> Intege;
+        long --> Long;
+        float --> Float;
+        double --> Double;
+        boolean --> Boolean;
+        char --> Character;
+
+## Laço for each
+- Sintaxe opcional e simplificada para percorrer coleções
+- Sintaxe: 
+
+        for (tipo apelido: coleção){
+            <comando 1>
+            <comando 2>
+        }
+
+## Listas
+- Lista é uma estrutura de dados
+    * Homogênea (dados do mesmo tipo);
+    * Ordenada (elementos acessados por meio de posições);
+    * Inicia vazia, e seus elementos são alocados sob demanda;
+    * Cada elemento ocupam um "nó" (ou nodo) da lista;
+- Tipo(interface): List;
+- Classes que implementam: ArrayList, LinkedList, etc.
+- Vantagens: 
+    * Tamanho variável;
+    * Facilidade para se realizar iserções e delegações;
+- Desvantagens: 
+    * Acesso sequencial aos elementos;
+###### Demo
+- Tamanho da lista: size();
+- Inserir elemento na lista: add(obj), add(int, obj);
+- Remover elementos da lista: remove(obj), remove(int), removeIf(predicate);
+- Encontrar posição de elemento: indexOf(obj), lastIndexOf(obj);
+- Filtrar lista com base em predicado: List"<"Integer> result = list.stream().filter(x -> x > 4).collect(Collectors.toList());
+- Encontrar primeira ocorrência com base em predicado: Integer result = list.stream().filter(x -> x > 4).findFirst().orElse(null);
+## Matrizes
+- Em progração, "matriz" é o nome dado a arranjos bidimensionais;
+    * Atenção: "Vetor de vetores";
+- Arranjo (array) é uma estrutura de dados:
+    * Homogênea (dados do mesmo tipo);
+    * Ordenada (elementos acessados por meio de posições);
+    * Alocada de uma vez só, em um bloco contíguo de memória;
+- Vantagens: 
+    * Acesso imediato aos elementos pela sua posição;
+- Desvantagens: 
+    * Tamanho fixo;
+    * Dificuldade para se realizar inserções e deleções;
+## Trabalhando com datas
+- Conceitos importantes: 
+- Data-hora local:
+    * ano-mês-dia-hora sem fuso horário;
+    * hora é opcional;
+    * Quando o momento exato não interessa a pessoas de outro fuso horário.
+    * Uso comum: sistemas de região única, excel;
+- Data-hora global: 
+    * ano-mês-dia-hora com fuso horário;
+    * Quando o momento exato interessa a pessoas de outro fuso horário;
+    * Uso comum: sistemas multi-região, web;
+- Duração:
+    * tempor decorrido entre duas datas-horas;
+## Timezone (fuso horário)
+- GMT - Greenwich Mean Time
+    * Horário de Londres;
+    * Horário do padrão UTC - Coordinated Universal Time;
+    * Também chamamos de "Z" time, ou Zulu time;
+- Outros fusos horários são relativos ao GMT/UTC:
+    * São Paulo: GMT-3;
+    * Manaus: GMT-4;
+    * Portugal: GMT+1;
+- Muitas linguagens/ tecnologias usam nomes para as timezones:
+    * "US/Pacific";
+    * "America/Sao_Paulo";
+    * etc.;
+## Padrão ISO 8601
+- Mostra como você deve representar datas e horas na forma de texto;
+- Data-hora local:
+    2022-07-21;
+    2022-07-21T14:52;
+    2022-07-21T14:52:09;
+- Data-hora global:
+    2022-07-21T14:52:09Z;
+    2022-07-21T14:52:09.254935Z;
+## Operações importantes com data-hora
+- Instanciação: 
+    * (agora) -> data-hora;
+    * Texto ISO 8601 -> data-hora;
+    * Texto formato customizado -> data-hora;
+    * dia, mês, ano, horário -> data-hora local;
+- Formatação:
+    * data-hora -> texto ISO 8601;
+    * data-hora -> texto formato customizado;
+- Obter dados de uma data-hora local:
+    * data-hora local -> dia, mês, ano, horário;
+- Converter data-hora global para local:
+    * data-hora global, timezone(sistema local) -> data-hora local;
+- Cálculos com data hora:
+    * data-hora +/- tempo -> data-hora;
+    * data-hora 1, data-hora 2 -> duração;
+## Principais tipos java (versão 8+)
+- data-hora local:
+    * LocalDate;
+    * LocalDateTime;
+- data-hora global:
+    * Instant;
+- duração:
+    * Duration;
+- outros:
+    * Zoneld;
+    * ChronoUnit;
