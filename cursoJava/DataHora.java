@@ -83,6 +83,5 @@ public class DataHora {
         // duração
         Duration t1 = Duration.between(pastLocalDateTime, nexLocalDateTime);
         System.out.println(t1.toDays());
-
     }
 }
