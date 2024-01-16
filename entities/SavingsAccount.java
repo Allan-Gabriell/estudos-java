@@ -1,6 +1,6 @@
 package entities;
 
-public class SavingsAccount extends Account2{
+public final class SavingsAccount extends Account2{
 
     private Double interestRate;
 
