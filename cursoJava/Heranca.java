@@ -36,5 +36,17 @@ public class Heranca {
         acc5.updateBalance();
         System.out.println("Update!");
        }
+
+       // --------------------------------------
+
+       Account2 acc6 = new Account2(1006, "Allan", 1000.0);
+       acc6.withDraw(200.0);
+       System.out.println(acc6.getBalance());
+       Account2 acc7 = new SavingsAccount(1007, "Armando", 1000.0, 0.01);
+       acc7.withDraw(200.0);
+       System.out.println(acc7.getBalance());
+       Account2 acc8 = new BusinessAccount(1008, "Jonas", 1000.0, 500.0);
+       acc8.withDraw(200.0);
+       System.out.println(acc8.getBalance());
     }
 }
