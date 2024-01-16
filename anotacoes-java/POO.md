@@ -282,3 +282,21 @@ Agora vamos melhorar nossa CLASSE, acrescentando nela um MÉTODO para calcular a
     - Flexibilidade;
     - Reuso;
 - Nota: embora o símbolo UML para composição(todo-parte) seja o diamante preto, neste contexto estamos chamando de composição qualquer associação tipo "tem-um" e "tem-vários";
+## Herança
+- É um tipo de associação que permite que uma classe herde TODOS os dados e comportamentos de outra;
+- Vantagens:
+    * Reuso;
+    * Polimorfismo;
+- Sintaxe:
+
+        class A extends B;
+
+## Modificador de acesso protectd
+## Upcasting e Downcasting
+- Upcasting
+    - Casting da subclasse para a superclasse;
+    - Uso comum: polimorfismo;
+_ Downcasting
+    - Casting da superclasse para subclasse;
+    - Palavra instanceof;
+    - Uso comum: métodos que recebem parâmetros genéricos (ex. Equals);
