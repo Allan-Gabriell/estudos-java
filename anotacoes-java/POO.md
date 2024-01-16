@@ -328,3 +328,15 @@ _ Downcasting
         * Geralmente convém acrescentar final em métodos sobrepostos, pois sobreposições múltiplas podem ser uma porta de entrada para inconsistências;
     - Performance: atributos de tipo de uma classe final são analisados de forma mais rápida em tempo de execução;
         * Exemplo clássico: String;
+## Introdução ao polimorfismo
+- Pilares da POO = Encapsulamento, herança e polimorfismo;
+- Em programação Orientada a Objetos, polimorfismos é recurso que permite que variáveis de um mesmo tipo mais genérico possam apontar para onjetos de tipos específicos diferentes, tendo assim comportamentos diferentes conforme cada tipo específico.
+
+        Account x = new Account(1020, "Alex");
+        Account y = new SavingsAccount(1023, "Maria", 1000.0, 0.01);
+
+        x.withdraw(50.0);
+        y.withdraw(50.0);
+
+- A associação do tipo específico com o tipo genérico é feita em tempo de execução(upcasting);
+- O compilador não sabe para qual tipo específico a chamada do método Withdraw está sendo feita(ele só sabe que são duas variáveis do tipo Account);
