@@ -340,3 +340,6 @@ _ Downcasting
 
 - A associação do tipo específico com o tipo genérico é feita em tempo de execução(upcasting);
 - O compilador não sabe para qual tipo específico a chamada do método Withdraw está sendo feita(ele só sabe que são duas variáveis do tipo Account);
+## Classes abstratas
+- São classes que não podem ser instanciadas; 
+- É uma forma de garantir herança total: somente subclasses não abstratas podem ser instanciadas, mas nunca a superclasse abstrata;
