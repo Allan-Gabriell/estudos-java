@@ -66,7 +66,6 @@ public class DataHora {
         System.out.println("----------------------------------");
         LocalDate d11 = LocalDate.parse("2022-07-20");
         LocalDateTime d12 = LocalDateTime.parse("2022-07-20T01:30:26");
-        Instant d13 = Instant.parse("2022-07-20T01:30:26Z");
 
         LocalDate pastWeekLocalDate = d11.minusDays(7); //instanciei uma data que é o d11 - 7 dias
         LocalDate nextWeekLocalDate = d11.plusDays(8); // d11 + 8 dias
